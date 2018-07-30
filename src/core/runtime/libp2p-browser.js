@@ -11,6 +11,7 @@ const defaultsDeep = require('@nodeutils/defaults-deep')
 
 class Node extends libp2p {
   constructor (_options) {
+    options.bootstrap.splice(_options.bootstrap.indexOf('/dns4/sgp-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu'), 1)
     const wrtcstar = new WebRTCStar({id: _options.peerInfo.id})
     const wsstar = new WebSocketStar({id: _options.peerInfo.id})
 
